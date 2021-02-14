@@ -1,4 +1,4 @@
-export const from = '2020-12-01';
+export const from = '2018-12-01';
 
 export const to = null;
 
@@ -20,6 +20,10 @@ export const roles = [
   {
     name: 'Full stack developer Java/AngularJS',
     description: 'As the project progressed the role became more and more a Java/AngularJS fullstack developer continuing to build a customer portal where enterprise customers could log in by themself and search for network options for their locations. This new customer facing feature was built upon the engine for search described in the previous role. And had a angular frontend for managing addresses, products and so on. This system was integrated with a new self developed product catalog and a back-office ui to manage all products. This led to a faster way for customers to get quotes, often automatic replies, on buying new products.',
+  },
+  {
+    name: 'Full stack developer Java/AngularJS',
+    description: 'When the first version of the customer portal was released I felt that I wanted to try something new and as a result the Client agreed to move me from the sales support team to the operational support team. There I started working in a developing team with a lot of work dependent on just one team member. I worked close together with the project manager to develop I working development process and implement most of the scrum model. This new role had a few different goals, set up a back-office application for reserving and finding network identifiers of different forms. Providing data for a new Service Now integration as well as setting up API:s to fetch data from Service now API:s. And unifying the stack used to monitor the 2 recently merged networks. What I take away from this role os more of the soft skills I developed. Coaching new team-members. Introducing to stake holders what a sprint demo is and doing a lot of them and so on.',
   },
 ];
 

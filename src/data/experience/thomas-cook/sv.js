@@ -10,7 +10,7 @@ export const industry = 'E-Handel';
 
 export const projectName = 'Responsive website redesign';
 
-export const projectDescription = 'Thomas Cook Northern Europe ville ha förstärkning till deras projektgrupp som jobbade med att designa om Ving.se, Ving.no, Spies och Tjäreborg för att göra hemsidan mer mobilvänlig. De ville göra den responsiv, mer användaranpassad och lättöverskådlig för att underlätta för användarna. ';
+export const projectDescription = 'Thomas Cook Northern Europe ville ha förstärkning till deras projektgrupp som jobbade med att designa om Ving.se, Ving.no, Spies och Tjäreborg för att göra hemsidan mer mobilvänlig. De ville göra den responsiv, mer användaranpassad och lättöverskådlig för att underlätta för användarna.';
 
 export const roles = [
   {

@@ -1,4 +1,5 @@
 import * as sv from './sv.js';
+import * as en from './en.js';
 
 const mapAndSortList = (list) => {
   return list.map(project => ({
@@ -46,5 +47,9 @@ export default {
   sv: {
     title: sv.title,
     list: mapAndSortList(sv.list),
-  }
+  },
+  en: {
+    title: en.title,
+    list: mapAndSortList(en.list),
+  },
 };

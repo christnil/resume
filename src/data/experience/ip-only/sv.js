@@ -1,4 +1,4 @@
-export const from = '2020-12-01';
+export const from = '2018-12-01';
 
 export const to = null;
 
