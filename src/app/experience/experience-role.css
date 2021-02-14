@@ -1,0 +1,13 @@
+.role {
+    margin-top: 20px;
+    border-left: 1px solid #3f51b5;
+    padding-left: 12px;
+}
+
+.role__name {
+    font-weight: 600;
+}
+
+.role__description-paragraph {
+    margin: 0 0 0;
+}
