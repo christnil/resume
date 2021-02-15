@@ -25,7 +25,8 @@ export const roles = [
     name: 'Full stack developer GraphQL',
     description: [
       'I was trusted with more and more responsibilities at Thomas Cook and when a colleague and me started to discuss the potential of setting up a GraphQL API for the web we got an ok to test it out on a small application. The reason to try it was that we had seen that there was much time going in to writing API:s for similar API:s again and again across the company e.g. text data from our CMS and facts for hotels. We also had a need to figure out how to handle caching for our API:s to make our API calls run faster when possible.',
-      'We started of as a team of 3 and worked on this ',
+      'We started of as a team of 3 and worked on this and we started to set up our own framework for fetching data from different sources such as cache, api:s and databases. This was not available out of the box in Apollo server at the time this was built, which it to a lare portion is today. Our first version of caching was set up using a MS SQL in memory database as a key value store. We wanted to use Redis but there was some hosting issues needing sorting out before hand. We therefore used our SQL database in using the same kind of methods available on Redis to make swapping them out later on easier. Towards the end of the project we also got access to a Redis instance and could make the switch.',
+      'The new API made using data from other teams easier as well as providing us with useful data on response times for different types of data. We also tried setting up Apollo client directly on top of React but found it was not easy to build the same functionality that we where used to build using redux and redux-saga. So we ended up just using it in out data access layer at the client and keeping our shared application data in redux as it was previously done.',
     ],
   },
 ];
