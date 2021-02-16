@@ -9,16 +9,14 @@ import EducationList from "./education/education-list";
 const Resume = function() {
   return (
     <div className="main">
-      <div className="experience-section">
-        <Personal personal={data.en.personal} />
-        <h2 className="section-title">{data.en.experience.title}</h2>
-        <ExperienceList experiences={data.en.experience.list} labels={{ onGoing: data.en.experience.onGoing }} />
-        <h2 className="section-title">{data.en.education.title}</h2>
-        <EducationList list={data.en.education.list} />
-        <h2 className="section-title">{data.en.skills.title}</h2>
-        <p>{data.en.skills.description}</p>
-        <Skills experiences={data.en.experience.list} />
-      </div>
+      <Personal personal={data.en.personal} />
+      <h2 className="main__section-title">{data.en.experience.title}</h2>
+      <ExperienceList experiences={data.en.experience.list} labels={{ onGoing: data.en.experience.onGoing }} />
+      <h2 className="main__section-title">{data.en.education.title}</h2>
+      <EducationList list={data.en.education.list} />
+      <h2 className="main__section-title">{data.en.skills.title}</h2>
+      <p>{data.en.skills.description}</p>
+      <Skills experiences={data.en.experience.list} />
     </div>
   )
 }
