@@ -1,6 +1,6 @@
 export const name = 'Christoffer Nilsson';
 
-export const personal = 'I am the kind of person who really loves my job, I spend a lot of my free time programming things for fun or reading blogs. A part from my job I like to spend time with my family, my girlfriend a recently graduated teacher and our 3 years old son. I also follow a lot of sports for example golf, which I also (try to) play myself, hockey and some football';
+export const personal = 'I am the kind of person who really loves my job, I spend a lot of my free time programming things for fun or reading blogs. A part from my job I like to spend time with my family, my girlfriend a recently graduated teacher and our 3 years old son. I also follow a lot of sports for example golf, which I also (try to) play myself, hockey and some football.';
 
 export const professional = 'It is important for me to have a good relationship with the people I work with. In the teams where I have worked for longer time preiods I tend to end up in a role where I handle much of the communication with stakeholders, architects and users. It is a role I like to have since it is a good compromise between writing code and having a higher order of understanding.';
 
