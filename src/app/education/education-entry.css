@@ -1,0 +1,40 @@
+.education-entry {
+    margin-top: 30px;
+}
+
+.education-entry__title {
+    font-family: 'Open Sans', sans-serif;
+    color: #3f51b5;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.education-entry__institute {
+    display: inline;
+}
+
+.education-entry__name {
+    display: inline;
+}
+
+.education-entry__name:before {
+    content: "\00a0 -\00a0 ";
+}
+
+.education-entry__duration {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.education-entry__from {
+    display: inline;
+}
+
+.education-entry__to {
+    display: inline;
+}
+
+.education-entry__to:before {
+    content: "\00a0 -\00a0 ";
+}

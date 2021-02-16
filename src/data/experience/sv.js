@@ -15,3 +15,5 @@ export const list = [
 ];
 
 export const title = 'Erfarenhet';
+
+export const onGoing = 'Pågående';

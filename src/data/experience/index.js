@@ -45,11 +45,11 @@ const mapAndSortList = (list) => {
 
 export default {
   sv: {
-    title: sv.title,
+    ...sv,
     list: mapAndSortList(sv.list),
   },
   en: {
-    title: en.title,
+    ...en,
     list: mapAndSortList(en.list),
   },
 };

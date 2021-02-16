@@ -3,7 +3,7 @@ import React from 'react'
 import './experience-list-item.css';
 import ExperienceRole from "./experience-role";
 
-const ExperienceListItem = function({ experience }) {
+const ExperienceListItem = function({ experience, labels }) {
   return (
     <div className="experience">
       <div className="experience__title">
@@ -12,7 +12,7 @@ const ExperienceListItem = function({ experience }) {
       </div>
       <div className="experience__duration">
         <div className="experience__from">{experience.from}</div>
-        {!!experience.to && <div className="experience__to">{experience.to}</div>}
+        {!!(experience.to || labels.onGoing) && <div className="experience__to">{experience.to || labels.onGoing}</div>}
       </div>
       {!!experience.customerDescription && (
         <p className="experience__customer-description">

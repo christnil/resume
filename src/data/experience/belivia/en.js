@@ -4,41 +4,27 @@ export const to = '2014-12-31';
 
 export const customerName = 'Belivia';
 
-export const customerDescription = 'Belivia is a company working on risk assessment for insurance agencies. Part of their product is a electronic health declaration. The health declaration can be tailored to fit the need for different insurance policies by uploading scripts using their own format and the dynamically render the questionnaire to the user.';
+export const customerDescription = 'Belivia is a company working on risk assessment for insurance companies. Part of their product is a electronic health declaration. The health declaration can be tailored to fit the need for different insurance policies by uploading scripts using their own format and the dynamically render the questionnaire to the user.';
 
 export const industry = 'Insurance';
 
 export const projectName = 'E-health';
 
-export const projectDescription = 'För att sälja hälsodeklarationen som en integrerad komponent till ett stort svenskt försäkringsbolag beslutades det att bygga om produkten från PHP till .NET.';
+export const projectDescription = 'Upon selling their solution for health declarations to a large swedish insurance company they had to increase security on their application. Data had to be encrypted on disk and participants had to be able to sign their forms using BankId. They therefore decided to rewrite their application in .Net instead of the current PHP.';
 
 export const roles = [
   {
     name: 'Systemutvecklare',
-    description: [
-      'Christoffer var en av två utvecklare i projektet och var med på alla delar i projektet. Bland annat så integrerades produkten med ett försäkringsbolags miljö och man byggde en integration mot bankId för signering. Det var även viktigt med säkerhet i produkten då den behandlar en stor mängd personuppgifter. Man hade bland annat en granskning med en extern expert på IT-säkerhet.',
-      'Produkten levererades på utsatt tid som ett internt system hos försäkringsbolaget för att automatisera deras tidigare system som använde utskickade generiska pappersblanketter.',
-    ]
+    description: 'I was one of two developers on the project and worked on all parts of the new application. What I learned during this short project was how to integrate with the BankId API, how to handle encryption with rotating keys in the data access layer and how to go through a external security audit.',
   },
 ];
 
 export const keywords = [
-  { name: 'React', involvement: 5, usage: 5 },
-  { name: 'Node', involvement: 5, usage: 5 },
-  { name: 'Redux', involvement: 5, usage: 5 },
-  { name: 'Redux-saga', involvement: 5, usage: 5 },
-  { name: 'Express', involvement: 5, usage: 5 },
-  { name: 'GraphQL', involvement: 5, usage: 4 },
-  { name: 'Apollo-client', involvement: 5, usage: 4 },
-  { name: 'Jenkins', involvement: 5, usage: 5 },
-  { name: 'Kibana', involvement: 5, usage: 5 },
-  { name: 'Elasticsearch', involvement: 5, usage: 5 },
-  { name: 'MS SQL', involvement: 3, usage: 3 },
-  { name: 'Redis', involvement: 3, usage: 3 },
-  { name: 'RabbitMQ', involvement: 3, usage: 3 },
-  { name: 'TFS', involvement: 3, usage: 3 },
-  { name: '.Net', involvement: 5, usage: 5 },
-  { name: 'C#', involvement: 5, usage: 5 },
-  { name: 'Github', involvement: 5, usage: 5 },
-  { name: 'Bankid', involvement: 4, usage: 3 },
+  { name: '.Net', involvement: 5, usage: 5, category: 'Language/Framework' },
+  { name: 'Entity Framework', involvement: 5, usage: 5, category: 'Language/Framework' },
+  { name: 'javascript', involvement: 5, usage: 5, category: 'Language/Framework' },
+  { name: 'MVC', involvement: 5, usage: 5, category: 'Language/Framework' },
+  { name: 'TFS', involvement: 2, usage: 5, category: 'Hosting/CI/CD' },
+  { name: 'Azure', involvement: 1, usage: 5, category: 'Hosting/CI/CD' },
+  { name: 'BankId', involvement: 3, usage: 3, category: 'Other' },
 ];
