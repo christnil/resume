@@ -14,7 +14,7 @@ export const projectDescription = 'Upon selling their solution for health declar
 
 export const roles = [
   {
-    name: 'Systemutvecklare',
+    name: 'System developer .Net',
     description: 'I was one of two developers on the project and worked on all parts of the new application. What I learned during this short project was how to integrate with the BankId API, how to handle encryption with rotating keys in the data access layer and how to go through a external security audit.',
   },
 ];
