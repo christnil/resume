@@ -9,7 +9,7 @@ import EducationList from "./education/education-list";
 const Resume = function() {
   return (
     <div className="main">
-      <a href="/christoffer-nilsson-en.pdf" target="_blank">Download as PDF</a>
+      <a href="/resume/christoffer-nilsson-en.pdf" target="_blank">Download as PDF</a>
       <Personal personal={data.en.personal} />
       <h2 className="main__section-title">{data.en.experience.title}</h2>
       <ExperienceList experiences={data.en.experience.list} labels={{ onGoing: data.en.experience.onGoing }} />
