@@ -76,7 +76,7 @@ lines.push(`\\section{${data.en.education.title}}`);
 for (let i = 0; i < data.en.education.list.length; i++) {
   const education = data.en.education.list[i];
   lines.push(`\\subsection{${education.institute} - ${education.title}}`);
-  lines.push(`\\duration{${education.from} - ${education.from.to || data.en.experience.onGoing}}`);
+  lines.push(`\\duration{${education.from} - ${education.to || data.en.experience.onGoing}}`);
   lines.push('');
 }
 
