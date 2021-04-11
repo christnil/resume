@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.11.3)  11 APR 2021 09:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.11.3)  11 APR 2021 09:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -853,11 +853,11 @@ Package mdframed Info: Not enough space on this page on input line 106.
  [3] 
 AED: lastpage setting LastPage
 [4]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 184.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 184.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 185.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 185.
  (build/christoffer-nilsson-en.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 184.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 184.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 185.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 185.
 
 
 Package rerunfilecheck Warning: File `christoffer-nilsson-en.out' has changed.
@@ -867,7 +867,7 @@ Package rerunfilecheck Warning: File `christoffer-nilsson-en.out' has changed.
 Package rerunfilecheck Info: Checksums for `christoffer-nilsson-en.out':
 (rerunfilecheck)             Before: 081ED2163122265685D0F0F80A98DC02;685
 (rerunfilecheck)             After:  D5C9818AF30A533FE690CEBB23732FE3;745.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 184.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 185.
  ) 
 Here is how much of TeX's memory you used:
  11106 strings out of 480608
@@ -881,7 +881,7 @@ Here is how much of TeX's memory you used:
 ></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><
 /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></u
 sr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on build/christoffer-nilsson-en.pdf (4 pages, 79602 bytes).
+Output written on build/christoffer-nilsson-en.pdf (4 pages, 79677 bytes).
 PDF statistics:
  78 PDF objects out of 1000 (max. 8388607)
  67 compressed objects within 1 object stream
