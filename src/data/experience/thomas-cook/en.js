@@ -39,6 +39,7 @@ export const keywords = [
   { name: 'Express', involvement: 5, usage: 5, category: 'Language/Framework' },
   { name: 'GraphQL', involvement: 5, usage: 4, category: 'Language/Framework' },
   { name: 'Apollo-client', involvement: 5, usage: 4, category: 'Language/Framework' },
+  { name: 'Apollo-server', involvement: 5, usage: 4, category: 'Language/Framework' },
   { name: 'Jenkins', involvement: 5, usage: 5, category: 'Hosting/CI/CD' },
   { name: 'Drone', involvement: 3, usage: 3, category: 'Hosting/CI/CD' },
   { name: 'Kibana', involvement: 5, usage: 5, category: 'Monitoring' },
