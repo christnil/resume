@@ -4,7 +4,7 @@ export const to = '2014-12-31';
 
 export const customerName = 'Belivia';
 
-export const customerDescription = 'Belivia is a company working on risk assessment for insurance companies. Part of their product is a electronic health declaration. The health declaration can be tailored to fit the need for different insurance policies by uploading scripts using their own format and the dynamically render the questionnaire to the user.';
+export const customerDescription = 'Belivia is a company working on risk assessment for insurance companies. Part of their product is an electronic health declaration. The health declaration can be tailored to fit the need for different insurance policies by uploading scripts using their own format and the dynamically render the questionnaire to the user.';
 
 export const industry = 'Insurance';
 
@@ -27,4 +27,5 @@ export const keywords = [
   { name: 'TFS', involvement: 2, usage: 5, category: 'Hosting/CI/CD' },
   { name: 'Azure', involvement: 1, usage: 5, category: 'Hosting/CI/CD' },
   { name: 'BankId', involvement: 3, usage: 3, category: 'Other' },
+  { name: 'Visual Studio', involvement: 5, usage: 5, category: 'Tools', excludeFromProjectView: true },
 ];

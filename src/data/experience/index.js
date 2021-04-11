@@ -27,6 +27,12 @@ const mapAndSortList = (list) => {
         return 0;
       })
   })).sort((a, b) => {
+    if (!a.to && b.to) {
+      return -1;
+    }
+    if (a.to && !b.to) {
+      return 1;
+    }
     if (a.to < b.to) {
       return 1;
     }
@@ -34,10 +40,10 @@ const mapAndSortList = (list) => {
       return -1;
     }
     if (a.from < b.from) {
-      return 1;
+      return -1;
     }
     if (a.from > b.from) {
-      return -1;
+      return 1;
     }
     return 0;
   });
