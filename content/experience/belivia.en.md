@@ -5,7 +5,7 @@ project: E-health
 from: 2014-11-01
 to: 2014-12-31
 tags: [.Net, Entity Framework, javascript, MVC, TFS, Azure, BankId, Visual Studio]
-hidden: false
+hidden: true
 ---
 
 Belivia is a company working on risk assessment for insurance companies. Part of their product is an electronic health declaration. The health declaration can be tailored to fit the need for different insurance policies by uploading scripts using their own format and the dynamically render the questionnaire to the user.

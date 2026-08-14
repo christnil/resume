@@ -3,7 +3,7 @@ company: Scania
 from: 2012-04-01
 to: 2012-09-30
 tags: [.Net, Windows Forms, Microsoft Visual Studio]
-hidden: false
+hidden: true
 ---
 
 Scania is an international company that designs and manufactures trucks. Scania also develops software that controls, for example, the gearbox and engine to reduce fuel consumption in its vehicles by removing the human factor from driving. As more and more of a vehicle is controlled by software, it is important to be able to test it effectively.

@@ -3,7 +3,7 @@ company: Scania
 from: 2012-04-01
 to: 2012-09-30
 tags: [.Net, Windows Forms, Microsoft Visual Studio]
-hidden: false
+hidden: true
 ---
 
 Scania är ett internationellt företag som konstruerar och producerar lastbilar. Scania utvecklar även mjukvara som styr till exempel växellåda och motor för att sänka bränsleförbrukningen i bilarna genom att ta bort den mänskliga faktorn vid körning. I och med att allt mer i bilen styrs av mjukvara så är det viktigt att kunna testa denna på ett bra sätt.

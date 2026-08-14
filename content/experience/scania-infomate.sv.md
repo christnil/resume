@@ -3,7 +3,7 @@ company: Scania Infomate
 from: 2011-04-01
 to: 2011-09-30
 tags: [.Net, ASP.NET, C#, Javascript, jQuery, MS SQL, Microsoft Visual Studio]
-hidden: false
+hidden: true
 ---
 
 Scania Infomate är ett svenskt företag som är ägt av Scania och tillhandahåller och underhåller IT-lösningar med Scania som kund.

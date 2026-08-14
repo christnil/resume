@@ -3,7 +3,7 @@ company: Kemikalieinspektionen
 from: 2013-04-01
 to: 2013-09-30
 tags: [Bootstrap, Less, Knockout, .Net, MVC, MS SQL, Entity Framework, Microsoft Visual Studio, Microsoft SQL Management Studio, Subversion]
-hidden: false
+hidden: true
 ---
 
 Kemikalieinspektionen is a government agency responsible for monitoring companies that manufacture and import chemical products. Its main mission is to protect people and the environment from hazardous substances. Kemikalieinspektionen has around 250 employees across Sweden.

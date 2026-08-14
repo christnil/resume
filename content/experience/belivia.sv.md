@@ -5,7 +5,7 @@ project: Ehälsa
 from: 2014-11-01
 to: 2014-12-31
 tags: [.Net, Entity Framework, javascript, MVC, TFS, Azure, BankId, Visual Studio]
-hidden: false
+hidden: true
 ---
 
 Belivia är ett företag som sysslar med riskbedömning inom försäkringsbranschen. En del av deras produkt är en elektronisk hälsodeklaration. Hälsodeklarationen kan skräddarsys för olika försäkringstyper genom att försäkringsbolaget kan generera och ladda upp olika manus som sedan dynamiskt renderas för användaren till att visa rätt följdfrågor beroende på svar.

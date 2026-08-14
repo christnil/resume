@@ -30,7 +30,8 @@ export const parseContentFile = (source, path) => {
 
 const sortEntries = (entries) => entries.sort((a, b) => {
   if (!a.to !== !b.to) return a.to ? 1 : -1;
-  return (b.to || b.from).localeCompare(a.to || a.from);
+  const latestDate = (b.to || b.from).localeCompare(a.to || a.from);
+  return latestDate || a.from.localeCompare(b.from);
 });
 
 export const createResume = (files, language, filters = {}) => {

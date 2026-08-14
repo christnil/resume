@@ -17,7 +17,16 @@ const options = Object.fromEntries(process.argv.slice(2).map((argument) => {
 const language = options.lang === 'sv' ? 'sv' : 'en';
 const tags = (name) => options[name]?.split(',').filter(Boolean);
 const resume = createResume(Object.fromEntries(readMarkdownFiles(contentDirectory)), language, { only: tags('only'), exclude: tags('exclude') });
-const escapeLatex = (text) => text.replace(/\\/g, '\\textbackslash{}').replace(/([&%$#_{}])/g, '\\$1').replace(/~/g, '\\textasciitilde{}').replace(/\^/g, '\\textasciicircum{}');
+const escapeLatex = (text) => text
+  .replace(/\\/g, '\\textbackslash{}')
+  .replace(/([&%$#_{}])/g, '\\$1')
+  .replace(/~/g, '\\textasciitilde{}')
+  .replace(/\^/g, '\\textasciicircum{}')
+  .replace(/“|”/g, (character) => character === '“' ? '``' : "''")
+  .replace(/‘|’/g, (character) => character === '‘' ? '`' : "'")
+  .replace(/–/g, '--')
+  .replace(/—/g, '---')
+  .replace(/…/g, '\\ldots{}');
 const inlineLatex = (markdown) => {
   const escaped = escapeLatex(markdown);
   return escaped.replace(/\*\*(.+?)\*\*/g, '\\textbf{$1}').replace(/(?<!\*)\*([^*]+)\*(?!\*)/g, '\\textit{$1}');
