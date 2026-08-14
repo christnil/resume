@@ -3,7 +3,7 @@ name: Christoffer Nilsson
 hidden: false
 ---
 
-I am the kind of person who really loves my job. I spend a lot of my free time programming applications and puzzles just for fun and reading blogs. Apart from my job I like to spend time with my family, my girlfriend who is a teacher and our 5-year-old son and 1-year-old daughter. I also follow a lot of sports for example golf, which I also (try to) play myself, hockey and some football.
+I am the kind of person who really loves my job. I spend a lot of my free time programming applications and puzzles just for fun and reading blogs. Apart from my job I like to spend time with my family, my girlfriend who is a teacher and our 8-year-old son and 4-year-old daughter. I also follow a lot of sports for example golf, which I also (try to) play myself, hockey and some football.
 
 It is important to me to have a good relationship with the people I work with. I like to collaborate daily with my colleagues and value team effort more than what I do myself. In teams where I have worked for longer time periods, I have ended up in a role where I handle much of the communication with stakeholders, architects and users. It is something I like since I value having a bigger picture of how my team fits in with the organization.
 
