@@ -2,23 +2,36 @@
 
 Personal résumé site built with React and Vite. It is deployed to GitHub Pages at <https://christnil.github.io/resume>.
 
-Résumé content lives in `src/data/`; presentation components live in `src/app/`.
+Résumé content lives in `content/`; presentation components live in `src/app/`. The Vite multi-page build publishes English at `/resume/` and Swedish at `/resume/sv/`; each page links to the other. If an entry has no translation, it falls back to the available language and shows a muted language note.
+
+## Content
+
+Each entry is a Markdown file, discovered automatically with no registration files:
+
+- `content/experience/<slug>.<lang>.md`
+- `content/education/<slug>.<lang>.md`
+- `content/personal/personal.<lang>.md`
+
+YAML frontmatter holds metadata such as `company`/`institute`, `project`/`degree`, `from`, `to`, `tags`, and `hidden`. The Markdown body contains prose; `###` headings define experience roles. Tags are rendered as quiet per-entry metadata—there is no standalone keyword section or scoring model. Set `hidden: true` to suppress an entry from both site and PDFs.
+
+## PDF pipeline
+
+Install [Tectonic](https://tectonic-typesetting.github.io/) (`brew install tectonic`) or make `pdflatex` available. `npm run generatepdf` and `npm run generatepdf:sv` generate the English and Swedish TeX files and compile `dist/christoffer-nilsson-en.pdf` and `dist/christoffer-nilsson-sv.pdf`, respectively. Tectonic is preferred when present. The generator is a native ESM Node script and can run without a TeX engine:
+
+```sh
+node create-tex.mjs
+node create-tex.mjs --lang=sv
+node create-tex.mjs --lang=en --exclude=React,GraphQL
+```
+
+Use `--lang=en|sv` to choose the output language, `--only=tag1,tag2` to include entries matching at least one tag, or `--exclude=tag1,tag2` to omit entries matching any tag. The old Spotify-specific generator and variant have been removed.
+
+Generated `.tex` and `.pdf` files are intentionally ignored by Git.
 
 ## Commands
 
 - `npm install` — install dependencies.
 - `npm run start` — start the Vite development server.
-- `npm run build` — create a production build in `dist/`.
-- `npm run generatepdf:spotify` — generate the Spotify variant's `.tex` source.
-- `npm run deploy` — publish `dist/` to GitHub Pages. Its `predeploy` hook builds the site and generates the standard PDF first.
-
-## PDF pipeline
-
-`npm run generatepdf` generates `christoffer-nilsson-en.tex` and compiles it to PDF in `dist/`. It requires a local `pdflatex` installation. The TeX generators are native ESM Node scripts and can be run without LaTeX:
-
-```sh
-node create-tex.mjs
-npm run generatepdf:spotify
-```
-
-Generated `.tex` and `.pdf` files are intentionally ignored by Git.
+- `npm run build` — create the English and Swedish production pages in `dist/`.
+- `npm run generatepdf` / `npm run generatepdf:sv` — generate the language-specific PDF in `dist/`.
+- `npm run deploy` — run the build and both PDF generators, then publish `dist/` to GitHub Pages.

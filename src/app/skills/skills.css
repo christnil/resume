@@ -1,9 +1,0 @@
-.skills {
-    padding: 0 0 20px;
-}
-
-@media all and (min-width: 550px) {
-    .skills {
-        columns: 3;
-    }
-}

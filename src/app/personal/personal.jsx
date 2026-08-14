@@ -2,13 +2,14 @@ import React from 'react'
 
 import './personal.css';
 
-const Personal = function({ personal }) {
+import { renderMarkdown } from '../../content-loader';
+
+const Personal = function({ personal, fallback }) {
   return (
     <div className="personal">
       <h1 className="name">{personal.name}</h1>
-      <p>{personal.personal}</p>
-      <p>{personal.professional}</p>
-      <p>{personal.favoriteProject}</p>
+      {personal.description.map((paragraph, index) => <p key={index} dangerouslySetInnerHTML={{ __html: renderMarkdown(paragraph) }} />)}
+      {fallback && <small className="content-language-note">{fallback}</small>}
     </div>
   );
 };

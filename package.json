@@ -5,7 +5,9 @@
   "homepage": "https://christnil.github.io/resume",
   "type": "module",
   "dependencies": {
+    "gray-matter": "^4.0.3",
     "gh-pages": "^6.3.0",
+    "marked": "^17.0.4",
     "react": "^19.2.8",
     "react-dom": "^19.2.8"
   },
@@ -14,9 +16,9 @@
     "vite": "^8.2.1"
   },
   "scripts": {
-    "generatepdf": "node create-tex.mjs && mkdir -p dist && pdflatex -output-directory dist christoffer-nilsson-en.tex",
-    "generatepdf:spotify": "node create-tex-spotify.mjs",
-    "predeploy": "npm run build && npm run generatepdf",
+    "generatepdf": "node create-tex.mjs --lang=en && mkdir -p dist && if command -v tectonic >/dev/null; then tectonic --outdir dist christoffer-nilsson-en.tex; else pdflatex -output-directory dist christoffer-nilsson-en.tex; fi",
+    "generatepdf:sv": "node create-tex.mjs --lang=sv && mkdir -p dist && if command -v tectonic >/dev/null; then tectonic --outdir dist christoffer-nilsson-sv.tex; else pdflatex -output-directory dist christoffer-nilsson-sv.tex; fi",
+    "predeploy": "npm run build && npm run generatepdf && npm run generatepdf:sv",
     "deploy": "gh-pages -d dist",
     "start": "vite",
     "build": "vite build"

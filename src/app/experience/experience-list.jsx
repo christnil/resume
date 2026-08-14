@@ -5,7 +5,7 @@ const ExperienceList = function({ experiences, ...rest }) {
   return (
     <div className="experience-list">
       {experiences.map(experience => (
-        <div className="experience-list__item" key={`${experience.customerName} - ${experience.projectName}`}>
+        <div className="experience-list__item" key={experience.slug}>
           <ExperienceListItem experience={experience} {...rest} />
         </div>
       ))}

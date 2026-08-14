@@ -1,87 +1,51 @@
+import { readdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { join, relative } from 'node:path';
 import { EOL } from 'node:os';
-import { writeFileSync } from 'node:fs';
-import data from './src/data/index.js';
+import { createResume } from './src/content-loader.js';
+import { ui } from './src/i18n.js';
 
-const header = `
-\\documentclass[letterpaper,11pt]{article}
+const contentDirectory = join(import.meta.dirname, 'content');
+const readMarkdownFiles = (directory) => readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
+  const path = join(directory, entry.name);
+  return entry.isDirectory() ? readMarkdownFiles(path) : entry.name.endsWith('.md') ? [[`/${relative(import.meta.dirname, path)}`, readFileSync(path, 'utf8')]] : [];
+});
 
-\\def\\hextheme{3f51b5}
-
-\\setlength{\\parindent}{0em}
-\\setlength{\\parskip}{1em}
-
-\\usepackage{chriscv}
-
-\\begin{document}
-
-`;
+const options = Object.fromEntries(process.argv.slice(2).map((argument) => {
+  const [key, value] = argument.replace(/^--/, '').split('=');
+  return [key, value];
+}));
+const language = options.lang === 'sv' ? 'sv' : 'en';
+const tags = (name) => options[name]?.split(',').filter(Boolean);
+const resume = createResume(Object.fromEntries(readMarkdownFiles(contentDirectory)), language, { only: tags('only'), exclude: tags('exclude') });
+const escapeLatex = (text) => text.replace(/\\/g, '\\textbackslash{}').replace(/([&%$#_{}])/g, '\\$1').replace(/~/g, '\\textasciitilde{}').replace(/\^/g, '\\textasciicircum{}');
+const inlineLatex = (markdown) => {
+  const escaped = escapeLatex(markdown);
+  return escaped.replace(/\*\*(.+?)\*\*/g, '\\textbf{$1}').replace(/(?<!\*)\*([^*]+)\*(?!\*)/g, '\\textit{$1}');
+};
+const paragraphs = (items) => items.map(inlineLatex).join(`${EOL}${EOL}`);
+const entryTitle = (entry, title) => [entry.company || entry.institute, entry.project || entry.degree].filter(Boolean).join(' - ') || title;
 
 const lines = [
-  header,
-  '',
-  `\\headingname{${data.en.personal.name}}`,
-  '',
-  data.en.personal.personal,
-  '',
-  data.en.personal.professional,
-  '',
-  data.en.personal.favoriteProject,
-  '',
-  `\\section{${data.en.experience.title}}`,
-  '',
+  '\\documentclass[letterpaper,11pt]{article}', '', '\\def\\hextheme{3f51b5}', '', '\\setlength{\\parindent}{0em}', '\\setlength{\\parskip}{1em}', '', '\\usepackage{chriscv}', '', '\\begin{document}', '',
+  `\\headingname{${escapeLatex(resume.personal.name)}}`, '', paragraphs(resume.personal.description), '', `\\section{${ui[language].experience}}`, '',
 ];
-
-const pushPossibleParagraphs = (data) => {
-  if (typeof data === 'string') {
-    lines.push(data);
-  } else if (Array.isArray(data)) {
-    lines.push(data[0]);
-    for (let i = 1; i < data.length; i++) {
-      lines.push('');
-      lines.push(data[i]);
-    }
+for (const entry of resume.experience) {
+  lines.push(`\\subsection{${escapeLatex(entryTitle(entry))}}`);
+  lines.push(`\\duration{${entry.from} - ${entry.to || ui[language].ongoing}}`, '');
+  if (entry.tags.length) lines.push(`{\\small\\color{color-detail}${entry.tags.map(inlineLatex).join(' $\\cdot$ ')}}`, '');
+  if (entry.description.length) lines.push(paragraphs(entry.description), '');
+  for (const role of entry.roles) {
+    lines.push('\\begin{mdframed}[style=project]', `\\textbf{${inlineLatex(role.name)}}`, '');
+    if (role.paragraphs.length) lines.push(paragraphs(role.paragraphs));
+    lines.push('\\end{mdframed}', '');
   }
 }
-
-for (let i = 0; i < data.en.experience.list.length; i++) {
-  const experience = data.en.experience.list[i];
-  lines.push(`\\subsection{${experience.customerName} - ${experience.projectName}}`);
-  lines.push(`\\duration{${experience.from} - ${experience.to || data.en.experience.onGoing}}`);
-  lines.push('');
-  pushPossibleParagraphs(experience.customerDescription);
-  lines.push('');
-  pushPossibleParagraphs(experience.projectDescription);
-
-  for (let j = 0; j < experience.roles.length; j++) {
-    const role = experience.roles[j];
-    lines.push('');
-    lines.push('\\begin{mdframed}[style=project]');
-    lines.push(`\\textbf{${role.name}}`);
-    lines.push('');
-    lines.push('\\vspace{-10pt}');
-    pushPossibleParagraphs(role.description);
-    lines.push('\\end{mdframed}');
-  }
-
-  lines.push('');
-  for (let j = 0; j < experience.keywords.length; j++) {
-    const keyWord = experience.keywords[j];
-    lines.push(`{\\color{white}\\hl{ ${keyWord.name.replace('#', '\\#')} }}`)
-  }
-  lines.push('');
+lines.push(`\\section{${ui[language].education}}`, '');
+for (const entry of resume.education) {
+  lines.push(`\\subsection{${escapeLatex(entryTitle(entry))}}`, `\\duration{${entry.from} - ${entry.to || ui[language].ongoing}}`, '');
 }
+lines.push('\\end{document}', '');
 
-lines.push(`\\section{${data.en.education.title}}`);
-for (let i = 0; i < data.en.education.list.length; i++) {
-  const education = data.en.education.list[i];
-  lines.push(`\\subsection{${education.institute} - ${education.title}}`);
-  lines.push(`\\duration{${education.from} - ${education.to || data.en.experience.onGoing}}`);
-  lines.push('');
-}
-
-lines.push('\\end{document}');
-lines.push('');
-
-writeFileSync('./christoffer-nilsson-en.tex', lines.join(EOL));
-
-console.log('done');
+const filename = `christoffer-nilsson-${language}.tex`;
+writeFileSync(join(import.meta.dirname, filename), lines.join(EOL));
+console.log(`generated ${filename}`);
