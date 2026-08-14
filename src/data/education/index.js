@@ -1,4 +1,4 @@
-import * as en from './en';
+import * as en from './en.js';
 
 export default {
   en: en,

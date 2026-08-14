@@ -1,7 +1,6 @@
-const { EOL } = require('os');
-
-const fs = require('fs');
-const data = require('./src/data').default;
+import { EOL } from 'node:os';
+import { writeFileSync } from 'node:fs';
+import data from './src/data/index.js';
 
 const header = `
 \\documentclass[letterpaper,11pt]{article}
@@ -64,9 +63,9 @@ for (let i = 0; i < data.en.experience.list.length; i++) {
   lines.push(`\\subsection{${formatSectionName(experience.customerName, experience.projectName)}}`);
   lines.push(`\\duration{${experience.from} - ${experience.to || data.en.experience.onGoing}}`);
   lines.push('');
-  lines.push(pushPossibleParagraphs(experience.customerDescription));
+  pushPossibleParagraphs(experience.customerDescription);
   lines.push('');
-  lines.push(pushPossibleParagraphs(experience.projectDescription));
+  pushPossibleParagraphs(experience.projectDescription);
 
   for (let j = 0; j < experience.roles.length; j++) {
     const role = experience.roles[j];
@@ -117,6 +116,6 @@ lines.push(`\\end{multicols}`);
 lines.push('\\end{document}');
 lines.push('');
 
-fs.writeFileSync("./christoffer-nilsson-spotify.tex", lines.join(EOL));
+writeFileSync('./christoffer-nilsson-spotify.tex', lines.join(EOL));
 
 console.log('done');

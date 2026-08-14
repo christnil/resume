@@ -1,6 +1,6 @@
 export const from = '2014-10-15';
 
-export const to = null;
+export const to = '2021-08-16';
 
 export const customerName = 'Netlight';
 

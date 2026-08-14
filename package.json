@@ -3,42 +3,22 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "https://christnil.github.io/resume",
+  "type": "module",
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "esm": "^3.2.25",
-    "gh-pages": "^3.1.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-scripts": "4.0.1",
-    "web-vitals": "^0.2.4"
+    "gh-pages": "^6.3.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.0.5",
+    "vite": "^8.2.1"
   },
   "scripts": {
-    "generatepdf": "node -r esm create-tex.js && pdflatex -output-directory build christoffer-nilsson-en.tex",
+    "generatepdf": "node create-tex.mjs && mkdir -p dist && pdflatex -output-directory dist christoffer-nilsson-en.tex",
+    "generatepdf:spotify": "node create-tex-spotify.mjs",
     "predeploy": "npm run build && npm run generatepdf",
-    "deploy": "gh-pages -d build",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "deploy": "gh-pages -d dist",
+    "start": "vite",
+    "build": "vite build"
   }
 }

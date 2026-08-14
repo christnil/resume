@@ -1,7 +1,7 @@
-import experience from './experience';
-import personal from './personal';
-import education from './education';
-import keywords from './keywords';
+import experience from './experience/index.js';
+import personal from './personal/index.js';
+import education from './education/index.js';
+import keywords from './keywords/index.js';
 
 export default {
   sv: {

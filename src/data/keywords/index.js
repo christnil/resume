@@ -1,4 +1,4 @@
-import experience from '../experience';
+import experience from '../experience/index.js';
 
 const text = {
   sv: {

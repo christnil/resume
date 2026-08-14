@@ -1,9 +1,9 @@
-import * as belivia from './belivia/sv';
-import * as ipOnly from './ip-only/sv';
-import * as chemicalInspection from './kemikalieinspektionen/sv';
-import * as scania from './scania/sv';
-import * as scaniaInfomate from './scania-infomate/sv';
-import * as thomasCook from './thomas-cook/sv';
+import * as belivia from './belivia/sv.js';
+import * as ipOnly from './ip-only/sv.js';
+import * as chemicalInspection from './kemikalieinspektionen/sv.js';
+import * as scania from './scania/sv.js';
+import * as scaniaInfomate from './scania-infomate/sv.js';
+import * as thomasCook from './thomas-cook/sv.js';
 
 export const list = [
   belivia,

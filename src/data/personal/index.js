@@ -1,5 +1,5 @@
-import * as en from './en';
-import * as spotify from './spotify';
+import * as en from './en.js';
+import * as spotify from './spotify.js';
 
 export default {
   spotify,

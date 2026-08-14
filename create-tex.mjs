@@ -1,7 +1,6 @@
-const { EOL } = require('os');
-
-const fs = require('fs');
-const data = require('./src/data').default;
+import { EOL } from 'node:os';
+import { writeFileSync } from 'node:fs';
+import data from './src/data/index.js';
 
 const header = `
 \\documentclass[letterpaper,11pt]{article}
@@ -47,11 +46,11 @@ const pushPossibleParagraphs = (data) => {
 for (let i = 0; i < data.en.experience.list.length; i++) {
   const experience = data.en.experience.list[i];
   lines.push(`\\subsection{${experience.customerName} - ${experience.projectName}}`);
-  lines.push(`\\duration{${experience.from} - ${experience.from.to || data.en.experience.onGoing}}`);
+  lines.push(`\\duration{${experience.from} - ${experience.to || data.en.experience.onGoing}}`);
   lines.push('');
-  lines.push(pushPossibleParagraphs(experience.customerDescription));
+  pushPossibleParagraphs(experience.customerDescription);
   lines.push('');
-  lines.push(pushPossibleParagraphs(experience.projectDescription));
+  pushPossibleParagraphs(experience.projectDescription);
 
   for (let j = 0; j < experience.roles.length; j++) {
     const role = experience.roles[j];
@@ -83,6 +82,6 @@ for (let i = 0; i < data.en.education.list.length; i++) {
 lines.push('\\end{document}');
 lines.push('');
 
-fs.writeFileSync("./christoffer-nilsson-en.tex", lines.join(EOL));
+writeFileSync('./christoffer-nilsson-en.tex', lines.join(EOL));
 
 console.log('done');

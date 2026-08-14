@@ -1,9 +1,11 @@
-import * as belivia from './belivia/en';
-import * as ipOnly from './ip-only/en';
-import * as thomasCook from './thomas-cook/en';
-import * as netlight from './netlight/en';
+import * as belivia from './belivia/en.js';
+import * as ipOnly from './ip-only/en.js';
+import * as thomasCook from './thomas-cook/en.js';
+import * as netlight from './netlight/en.js';
+import * as memmo from './memmo/en.js';
 
 export const list = [
+  memmo,
   netlight,
   belivia,
   ipOnly,

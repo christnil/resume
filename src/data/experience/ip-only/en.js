@@ -1,6 +1,6 @@
 export const from = '2018-12-01';
 
-export const to = null;
+export const to = '2021-08-16';
 
 export const customerName = 'Global Connect/IP-Only';
 
