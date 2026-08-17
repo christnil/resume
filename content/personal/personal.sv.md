@@ -1,6 +1,6 @@
 ---
 name: Christoffer Nilsson
-title: Mjukvaruarkitekt och tech lead
+title: Mjukvaruarkitekt och utvecklare
 hidden: false
 ---
 
