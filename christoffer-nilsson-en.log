@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.3.4)  17 AUG 2026 07:46
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.3.4)  17 AUG 2026 08:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -661,22 +661,22 @@ Package hyperref Warning: Rerun to get /PageLabels entry.
 
 Package csquotes Info: Redefining character " on input line 10.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 25.
+(Font)              <7> on input line 26.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 25.
+(Font)              <5> on input line 26.
 
 Package mdframed Warning: You got a bad break
 (mdframed)                because the last box will be empty
 (mdframed)                you have to change it manually
 (mdframed)                by changing the text, the space
-(mdframed)                or something else on input line 39.
+(mdframed)                or something else on input line 40.
 
 [1
 
 ] [2] [3]
-Package mdframed Info: Not enough space on this page on input line 123.
+Package mdframed Info: Not enough space on this page on input line 128.
  [4]
-Package mdframed Info: Not enough space on this page on input line 123.
+Package mdframed Info: Not enough space on this page on input line 128.
  [5]
 
 enddocument/afterlastpage (AED): lastpage setting LastPage.
@@ -698,16 +698,16 @@ Package rerunfilecheck Info: Checksums for `christoffer-nilsson-en.out':
 (rerunfilecheck)             Before: <no file>
 (rerunfilecheck)             After:  8E9999ECDADD15309733E59983DD83A9;2309.
 
-Package lastpage Warning: Rerun to get the references right on input line 136.
+Package lastpage Warning: Rerun to get the references right on input line 141.
 
  ) 
 Here is how much of TeX's memory you used:
- 14237 strings out of 468174
- 234358 string characters out of 5434987
- 702443 words of memory out of 5000000
- 42755 multiletter control sequences out of 15000+600000
- 643391 words of font info for 48 fonts, out of 8000000 for 9000
+ 14240 strings out of 468174
+ 234394 string characters out of 5434987
+ 702498 words of memory out of 5000000
+ 42758 multiletter control sequences out of 15000+600000
+ 646390 words of font info for 49 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 88i,12n,104p,1402b,545s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 88i,11n,104p,1364b,545s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on dist/christoffer-nilsson-en.pdf (5 pages).

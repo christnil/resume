@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.3.4)  17 AUG 2026 07:46
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.3.4)  17 AUG 2026 08:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -661,14 +661,12 @@ Package hyperref Warning: Rerun to get /PageLabels entry.
 
 Package csquotes Info: Redefining character " on input line 10.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 25.
+(Font)              <7> on input line 26.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 25.
+(Font)              <5> on input line 26.
 [1
 
-] [2] [3]
-Package mdframed Info: Not enough space on this page on input line 101.
- [4] [5]
+] [2] [3] [4] [5]
 
 enddocument/afterlastpage (AED): lastpage setting LastPage.
 (dist/christoffer-nilsson-sv.aux)
@@ -689,16 +687,16 @@ Package rerunfilecheck Info: Checksums for `christoffer-nilsson-sv.out':
 (rerunfilecheck)             Before: <no file>
 (rerunfilecheck)             After:  9913A4C1D9573456956A39F28279D9CA;2142.
 
-Package lastpage Warning: Rerun to get the references right on input line 130.
+Package lastpage Warning: Rerun to get the references right on input line 141.
 
  ) 
 Here is how much of TeX's memory you used:
- 14241 strings out of 468174
- 234404 string characters out of 5434987
- 702443 words of memory out of 5000000
- 42759 multiletter control sequences out of 15000+600000
- 643391 words of font info for 48 fonts, out of 8000000 for 9000
+ 14244 strings out of 468174
+ 234440 string characters out of 5434987
+ 703498 words of memory out of 5000000
+ 42762 multiletter control sequences out of 15000+600000
+ 646390 words of font info for 49 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 88i,11n,104p,1124b,544s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 88i,12n,104p,1124b,545s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on dist/christoffer-nilsson-sv.pdf (5 pages).
