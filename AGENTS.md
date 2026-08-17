@@ -17,6 +17,9 @@ Personal résumé site (Vite / React), deployed to GitHub Pages at https://chris
 ## Resume.pdf (untracked)
 `Resume.pdf` at the repository root is gitignored and is not produced by this pipeline. Do not commit or delete it.
 
+## Deployment
+The normal process is edit Markdown in `content/` → commit → push to `master`. GitHub Actions builds, smoke-tests, generates both PDFs, and deploys `dist/` to the `gh-pages` branch; GitHub Pages serves that branch. Pull requests to `master` run the same checks without publishing. Run `npm run verify` locally before pushing when practical. `npm run deploy` remains the manual fallback (build + both PDFs + `gh-pages`).
+
 ## Commands
-`npm run start` (Vite dev server) · `npm run build` (both production pages in `dist/`) · `npm run verify` (build and browser smoke-test both pages; run `npx playwright install chromium` once after install) · `npm run generatepdf` / `npm run generatepdf:sv` (language-specific PDFs) · `npm run deploy` (build + both PDFs + gh-pages).
+`npm run start` (Vite dev server) · `npm run build` (both production pages in `dist/`) · `npm run verify` (build and browser smoke-test both pages; run `npx playwright install chromium` once after install) · `npm run generatepdf` / `npm run generatepdf:sv` (language-specific PDFs) · `npm run deploy` (manual build + both PDFs + gh-pages fallback).
 There is no lint, typecheck, or unit-test command. `npm run verify` is the production browser smoke test.

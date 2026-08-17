@@ -33,6 +33,10 @@ Generated `.tex` and `.pdf` files are intentionally ignored by Git.
 - `npm install` — install dependencies.
 - `npm run start` — start the Vite development server.
 - `npm run build` — create the English and Swedish production pages in `dist/`.
-- `npm run verify` — build, serve, and smoke-test both production pages in Chromium. Run `npx playwright install chromium` once after installing dependencies. It verifies rendered content, clean browser consoles, hidden entries, and language-specific PDF links.
+- `npm run verify` — build, serve, and smoke-test both production pages in Chromium. Run `npx playwright install chromium` once after installing dependencies. It verifies rendered content, clean browser consoles, hidden entries, and language-specific PDF links. Run this before pushing when practical.
 - `npm run generatepdf` / `npm run generatepdf:sv` — generate the language-specific PDF in `dist/`.
-- `npm run deploy` — run the build and both PDF generators, then publish `dist/` to GitHub Pages.
+- `npm run deploy` — run the build and both PDF generators, then publish `dist/` to GitHub Pages; this remains the manual fallback.
+
+## Deployment
+
+The normal workflow is: edit the Markdown in `content/`, commit, and push to `master`. GitHub Actions installs dependencies and Tectonic, smoke-tests the production site, generates both PDFs, and publishes the complete `dist/` directory to the `gh-pages` branch. GitHub Pages serves that branch at <https://christnil.github.io/resume>. Pull requests to `master` run the same build, smoke test, and PDF checks but never publish.
