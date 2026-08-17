@@ -1,6 +1,6 @@
 ---
 name: Christoffer Nilsson
-title: Software architect and tech lead
+title: Developer and tech lead
 hidden: false
 ---
 
