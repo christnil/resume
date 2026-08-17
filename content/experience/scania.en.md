@@ -2,13 +2,13 @@
 company: Scania
 from: 2012-04-01
 to: 2012-09-30
-tags: [.Net, Windows Forms, Microsoft Visual Studio]
+tags: [.NET, Windows Forms, Microsoft Visual Studio]
 hidden: true
 ---
 
 Scania is an international company that designs and manufactures trucks. Scania also develops software that controls, for example, the gearbox and engine to reduce fuel consumption in its vehicles by removing the human factor from driving. As more and more of a vehicle is controlled by software, it is important to be able to test it effectively.
 
-To do this, sensor values and control signals in the vehicles are logged, for example gear, speed and road gradient. Domain experts then analyse these signals by plotting different signals in parallel, making it possible to identify faults. To perform this analysis, Scania developed its own .Net application that can plot data logged in real time in the vehicle.
+To do this, sensor values and control signals in the vehicles are logged, for example gear, speed and road gradient. Domain experts then analyse these signals by plotting different signals in parallel, making it possible to identify faults. To perform this analysis, Scania developed its own .NET application that can plot data logged in real time in the vehicle.
 
 ### System developer
 

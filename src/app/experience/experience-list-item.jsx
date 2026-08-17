@@ -9,6 +9,7 @@ const ExperienceListItem = function({ experience, labels }) {
       <div className="experience__title">
         <div className="experience__customer-name">{experience.company}</div>
         {!!experience.project && <div className="experience__project-name">{experience.project}</div>}
+        {!!experience.via && <div className="experience__via">via {experience.via}</div>}
       </div>
       <div className="experience__duration">
         <div className="experience__from">{experience.from}</div>

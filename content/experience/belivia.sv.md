@@ -2,9 +2,10 @@
 company: Belivia
 industry: Försäkring
 project: Ehälsa
+via: Netlight
 from: 2014-11-01
 to: 2014-12-31
-tags: [.Net, Entity Framework, javascript, MVC, TFS, Azure, BankId, Visual Studio]
+tags: [.NET, Entity Framework, JavaScript, MVC, TFS, Azure, BankID, Visual Studio]
 hidden: true
 ---
 

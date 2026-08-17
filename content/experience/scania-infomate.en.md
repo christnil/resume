@@ -2,7 +2,7 @@
 company: Scania Infomate
 from: 2011-04-01
 to: 2011-09-30
-tags: [.Net, ASP.NET, C#, Javascript, jQuery, MS SQL, Microsoft Visual Studio]
+tags: [.NET, ASP.NET, C#, JavaScript, jQuery, MS SQL, Microsoft Visual Studio]
 hidden: true
 ---
 
@@ -12,6 +12,6 @@ It is important that the collaboration between Scania Infomate and Scania works 
 
 During my time at Infomate, I was responsible for creating this survey tool. I worked as the sole developer on the project and was responsible for requirements, architecture and implementation. The tool was completely independent of other tools at Scania, with the exception of AD login.
 
-The result was a web application written in C# .Net and ASPX, with an administrator interface, an interface for survey owners and a user interface where authorized users could participate in surveys.
+The result was a web application written in C# .NET and ASPX, with an administrator interface, an interface for survey owners and a user interface where authorized users could participate in surveys.
 
 ### System developer

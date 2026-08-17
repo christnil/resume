@@ -78,6 +78,10 @@
     \end{minipage}
 }
 
+\newcommand{\headingsubtitle}[1]{
+    {\large\color{color-detail}#1}
+}
+
 % Inline heading
 \newcommand{\headinginline}[2]{
     \begin{minipage}[t]{0.60\textwidth}
@@ -126,6 +130,7 @@
 \vspace{-\smallskipamount}]
 
 \newcommand{\duration}[1]{\vspace{-12pt}\color{color-title}{#1}\normalcolor}
+\newcommand{\entryvia}[1]{\vspace{-10pt}{\small\color{color-detail}#1}\par}
 
 \newcommand{\tag}[1]{\color{white}\hl{ {#1} }}
 % Footer

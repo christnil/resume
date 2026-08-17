@@ -21,6 +21,13 @@
   content: "\00a0 -\00a0 ";
 }
 
+.experience__via {
+  color: #666;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+}
+
 .experience__duration {
   font-family: 'Open Sans Condensed', sans-serif;
   color: #3f51b5;

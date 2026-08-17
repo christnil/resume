@@ -2,7 +2,7 @@
 company: Scania
 from: 2012-04-01
 to: 2012-09-30
-tags: [.Net, Windows Forms, Microsoft Visual Studio]
+tags: [.NET, Windows Forms, Microsoft Visual Studio]
 hidden: true
 ---
 

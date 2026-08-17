@@ -2,7 +2,7 @@
 company: Svenska Spel
 industry: Gaming / Betting
 from: 2023-08-15
-tags: [Scala, .Net, k8s, GCP, GitHub, Argo, GitHub Actions, Testkube, LGTM, Kafka, Kafka Streams, ksqlDB, Adobe Experience Platform, Data Mesh]
+tags: [Scala, .NET, k8s, GCP, GitHub, Argo, GitHub Actions, Testkube, LGTM, Kafka, Kafka Streams, ksqlDB, Adobe Experience Platform, Data Mesh]
 hidden: false
 ---
 

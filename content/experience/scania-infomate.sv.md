@@ -2,7 +2,7 @@
 company: Scania Infomate
 from: 2011-04-01
 to: 2011-09-30
-tags: [.Net, ASP.NET, C#, Javascript, jQuery, MS SQL, Microsoft Visual Studio]
+tags: [.NET, ASP.NET, C#, JavaScript, jQuery, MS SQL, Microsoft Visual Studio]
 hidden: true
 ---
 

@@ -8,6 +8,7 @@ const Personal = function({ personal, fallback }) {
   return (
     <div className="personal">
       <h1 className="name">{personal.name}</h1>
+      {personal.title && <div className="personal__title">{personal.title}</div>}
       {personal.description.map((paragraph, index) => <p key={index} dangerouslySetInnerHTML={{ __html: renderMarkdown(paragraph) }} />)}
       {fallback && <small className="content-language-note">{fallback}</small>}
     </div>

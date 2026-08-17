@@ -3,11 +3,11 @@ company: Memmo.me
 industry: Marknadsplats online / Underhållning
 from: 2021-08-16
 to: 2023-06-30
-tags: [React, React Native, Node.js, GraphQL, Team lead, Payments, CMS/Admin, Real-time messaging, Search, Algolia, Terraform, GCP, Github, Github Actions]
+tags: [React, React Native, Node.js, GraphQL, Team lead, Payments, CMS/Admin, Real-time messaging, Search, Algolia, Terraform, GCP, GitHub, GitHub Actions]
 hidden: false
 ---
 
-Memmo.me är ett dynamiskt och innovativt företag som verkar inom personliga meddelanden online. Memmo.me erbjuder en plattform där individer kan komma i kontakt med sina favoritkändisar och influencers för att beställa personliga videohälsningar, meddelanden och hälsningar. Företagets uppdrag är att skapa minnesvärda och meningsfulla upplevelser för användarna genom att överbrygga avståndet mellan fans och deras idoler.
+Memmo.me var en plattform för att beställa personliga videohälsningar från kändisar och influencers. Kunder kunde beställa hälsningar och meddelanden direkt från personer de följde.
 
 ### Fullstack team lead
 

@@ -41,10 +41,13 @@ const entryTitle = (entry, title) => [entry.company || entry.institute, entry.pr
 
 const lines = [
   '\\documentclass[letterpaper,11pt]{article}', '', '\\def\\hextheme{3f51b5}', '', '\\setlength{\\parindent}{0em}', '\\setlength{\\parskip}{1em}', '', '\\usepackage{chriscv}', '', '\\begin{document}', '',
-  `\\headingname{${escapeLatex(resume.personal.name)}}`, '', paragraphs(resume.personal.description), '', `\\section{${ui[language].experience}}`, '',
+  `\\headingname{${escapeLatex(resume.personal.name)}}`,
+  ...(resume.personal.title ? [`\\headingsubtitle{${escapeLatex(resume.personal.title)}}`] : []),
+  '', paragraphs(resume.personal.description), '', `\\section{${ui[language].experience}}`, '',
 ];
 for (const entry of resume.experience) {
   lines.push(`\\subsection{${escapeLatex(entryTitle(entry))}}`);
+  if (entry.via) lines.push(`\\entryvia{via ${escapeLatex(entry.via)}}`);
   lines.push(`\\duration{${entry.from} - ${entry.to || ui[language].ongoing}}`, '');
   if (entry.tags.length) lines.push(`{\\small\\color{color-detail}${entry.tags.map(inlineLatex).join(' $\\cdot$ ')}}`, '');
   if (entry.description.length) lines.push(paragraphs(entry.description), '');
