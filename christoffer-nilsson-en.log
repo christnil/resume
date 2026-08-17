@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.3.4)  17 AUG 2026 08:39
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.3.4)  17 AUG 2026 08:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -661,22 +661,13 @@ Package hyperref Warning: Rerun to get /PageLabels entry.
 
 Package csquotes Info: Redefining character " on input line 10.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 26.
+(Font)              <7> on input line 28.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 26.
-
-Package mdframed Warning: You got a bad break
-(mdframed)                because the last box will be empty
-(mdframed)                you have to change it manually
-(mdframed)                by changing the text, the space
-(mdframed)                or something else on input line 40.
-
+(Font)              <5> on input line 28.
 [1
 
-] [2] [3]
-Package mdframed Info: Not enough space on this page on input line 128.
- [4]
-Package mdframed Info: Not enough space on this page on input line 128.
+] [2] [3] [4]
+Package mdframed Info: Not enough space on this page on input line 130.
  [5]
 
 enddocument/afterlastpage (AED): lastpage setting LastPage.
@@ -698,7 +689,7 @@ Package rerunfilecheck Info: Checksums for `christoffer-nilsson-en.out':
 (rerunfilecheck)             Before: <no file>
 (rerunfilecheck)             After:  8E9999ECDADD15309733E59983DD83A9;2309.
 
-Package lastpage Warning: Rerun to get the references right on input line 141.
+Package lastpage Warning: Rerun to get the references right on input line 143.
 
  ) 
 Here is how much of TeX's memory you used:
