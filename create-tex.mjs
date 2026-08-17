@@ -1,7 +1,8 @@
 import { readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join, relative } from 'node:path';
 import { EOL } from 'node:os';
-import { createResume } from './src/content-loader.js';
+import { createResume } from './src/content-normalizer.js';
+import { parseContentFile } from './src/node-content-loader.js';
 import { ui } from './src/i18n.js';
 
 const contentDirectory = join(import.meta.dirname, 'content');
@@ -16,7 +17,8 @@ const options = Object.fromEntries(process.argv.slice(2).map((argument) => {
 }));
 const language = options.lang === 'sv' ? 'sv' : 'en';
 const tags = (name) => options[name]?.split(',').filter(Boolean);
-const resume = createResume(Object.fromEntries(readMarkdownFiles(contentDirectory)), language, { only: tags('only'), exclude: tags('exclude') });
+const entries = readMarkdownFiles(contentDirectory).map(([path, source]) => parseContentFile(source, path));
+const resume = createResume(entries, language, { only: tags('only'), exclude: tags('exclude') });
 const escapeLatex = (text) => text
   .replace(/[\u200b\ufeff\u00ad]/g, '')
   .replace(/\\/g, '\\textbackslash{}')

@@ -1,4 +1,3 @@
-import matter from 'gray-matter';
 import { marked } from 'marked';
 
 const splitMarkdown = (body) => {
@@ -17,15 +16,12 @@ const splitMarkdown = (body) => {
   return { description, roles };
 };
 
-export const renderMarkdown = (markdown) => marked.parseInline(markdown);
-
-export const parseContentFile = (source, path) => {
-  const { data, content } = matter(source);
+export const normalizeContentFile = (data, body, path) => {
   const match = path.replace(/\\/g, '/').match(/\/(experience|education|personal)\/([^/]+)\.(en|sv)\.md$/);
   if (!match) throw new Error(`Invalid content path: ${path}`);
   const [, type, slug, language] = match;
   const date = (value) => value instanceof Date ? value.toISOString().slice(0, 10) : value;
-  return { ...data, from: date(data.from), to: date(data.to), ...splitMarkdown(content), type, slug, language, sourceLanguage: language, hidden: data.hidden === true, tags: data.tags ?? [] };
+  return { ...data, from: date(data.from), to: date(data.to), ...splitMarkdown(body), type, slug, language, sourceLanguage: language, hidden: data.hidden === true, tags: data.tags ?? [] };
 };
 
 const sortEntries = (entries) => entries.sort((a, b) => {
@@ -34,10 +30,9 @@ const sortEntries = (entries) => entries.sort((a, b) => {
   return latestDate || a.from.localeCompare(b.from);
 });
 
-export const createResume = (files, language, filters = {}) => {
-  const parsed = Object.entries(files).map(([path, source]) => parseContentFile(source, path));
-  const byTypeAndSlug = new Map(parsed.map((entry) => [`${entry.type}:${entry.slug}:${entry.language}`, entry]));
-  const select = (type) => [...new Set(parsed.filter((entry) => entry.type === type).map((entry) => entry.slug))]
+export const createResume = (entries, language, filters = {}) => {
+  const byTypeAndSlug = new Map(entries.map((entry) => [`${entry.type}:${entry.slug}:${entry.language}`, entry]));
+  const select = (type) => [...new Set(entries.filter((entry) => entry.type === type).map((entry) => entry.slug))]
     .map((slug) => byTypeAndSlug.get(`${type}:${slug}:${language}`) || byTypeAndSlug.get(`${type}:${slug}:${language === 'en' ? 'sv' : 'en'}`))
     .filter(Boolean)
     .map((entry) => ({ ...entry, fallback: entry.language !== language }))

@@ -1,7 +1,7 @@
 import React from 'react'
 
 import './experience-role.css';
-import { renderMarkdown } from '../../content-loader';
+import { renderMarkdown } from '../../markdown';
 
 const ExperienceRole = function({ role }) {
   return (

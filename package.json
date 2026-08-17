@@ -13,6 +13,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^6.0.5",
+    "playwright": "^1.62.1",
     "vite": "^8.2.1"
   },
   "scripts": {
@@ -22,6 +23,7 @@
     "predeploy": "npm run build && npm run generatepdf && npm run generatepdf:sv",
     "deploy": "gh-pages -d dist",
     "start": "vite",
-    "build": "vite build"
+    "build": "vite build",
+    "verify": "npm run build && node scripts/verify.mjs"
   }
 }

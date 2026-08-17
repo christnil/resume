@@ -2,7 +2,7 @@ import React from 'react'
 
 import './personal.css';
 
-import { renderMarkdown } from '../../content-loader';
+import { renderMarkdown } from '../../markdown';
 
 const Personal = function({ personal, fallback }) {
   return (

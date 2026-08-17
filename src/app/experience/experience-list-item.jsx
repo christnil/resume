@@ -30,7 +30,7 @@ const ExperienceListItem = function({ experience, labels }) {
   );
 };
 
-import { renderMarkdown } from '../../content-loader';
+import { renderMarkdown } from '../../markdown';
 const MarkdownParagraph = ({ className, markdown }) => <p className={className} dangerouslySetInnerHTML={{ __html: renderMarkdown(markdown) }} />;
 
 export default ExperienceListItem;

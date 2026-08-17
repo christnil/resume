@@ -33,5 +33,6 @@ Generated `.tex` and `.pdf` files are intentionally ignored by Git.
 - `npm install` — install dependencies.
 - `npm run start` — start the Vite development server.
 - `npm run build` — create the English and Swedish production pages in `dist/`.
+- `npm run verify` — build, serve, and smoke-test both production pages in Chromium. Run `npx playwright install chromium` once after installing dependencies. It verifies rendered content, clean browser consoles, hidden entries, and language-specific PDF links.
 - `npm run generatepdf` / `npm run generatepdf:sv` — generate the language-specific PDF in `dist/`.
 - `npm run deploy` — run the build and both PDF generators, then publish `dist/` to GitHub Pages.

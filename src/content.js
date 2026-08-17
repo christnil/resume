@@ -1,5 +1,5 @@
-import { createResume } from './content-loader';
+import { createResume } from './content-normalizer';
 
-const files = import.meta.glob('../content/**/*.md', { eager: true, query: '?raw', import: 'default' });
+const entries = Object.values(import.meta.glob('../content/**/*.md', { eager: true, import: 'default' }));
 
-export const loadResume = (language) => createResume(files, language);
+export const loadResume = (language) => createResume(entries, language);

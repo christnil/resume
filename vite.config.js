@@ -1,28 +1,19 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import { readFileSync, readdirSync } from 'node:fs';
-import { join, relative, resolve } from 'node:path';
+import { resolve } from 'node:path';
+import { parseContentFile } from './src/node-content-loader.js';
 
-const hiddenContentPatterns = (directory, root) => readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
-  const path = join(directory, entry.name);
-  if (entry.isDirectory()) return hiddenContentPatterns(path, root);
-  if (!entry.name.endsWith('.md') || !/^---[\s\S]*?\nhidden:\s*true\s*\n---/.test(readFileSync(path, 'utf8'))) return [];
-  return [`!../${relative(root, path)}`];
-});
-
-const excludeHiddenResumeContent = (root) => ({
-  name: 'exclude-hidden-resume-content',
-  enforce: 'pre',
+const resumeContentLoader = () => ({
+  name: 'resume-content-loader',
   transform(source, id) {
-    if (!id.endsWith('/src/content.js')) return null;
-    const patterns = ["'../content/**/*.md'", ...hiddenContentPatterns(join(root, 'content'), root).map((pattern) => `'${pattern}'`)];
-    return source.replace("import.meta.glob('../content/**/*.md'", `import.meta.glob([${patterns.join(', ')}]`);
+    if (!id.endsWith('.md')) return null;
+    return `export default ${JSON.stringify(parseContentFile(source, id))};`;
   },
 });
 
 export default defineConfig({
   base: '/resume/',
-  plugins: [react(), excludeHiddenResumeContent(import.meta.dirname)],
+  plugins: [resumeContentLoader(), react()],
   build: {
     rollupOptions: {
       input: {
