@@ -18,6 +18,7 @@ const language = options.lang === 'sv' ? 'sv' : 'en';
 const tags = (name) => options[name]?.split(',').filter(Boolean);
 const resume = createResume(Object.fromEntries(readMarkdownFiles(contentDirectory)), language, { only: tags('only'), exclude: tags('exclude') });
 const escapeLatex = (text) => text
+  .replace(/[\u200b\ufeff\u00ad]/g, '')
   .replace(/\\/g, '\\textbackslash{}')
   .replace(/([&%$#_{}])/g, '\\$1')
   .replace(/~/g, '\\textasciitilde{}')
@@ -26,7 +27,9 @@ const escapeLatex = (text) => text
   .replace(/‘|’/g, (character) => character === '‘' ? '`' : "'")
   .replace(/–/g, '--')
   .replace(/—/g, '---')
-  .replace(/…/g, '\\ldots{}');
+  .replace(/…/g, '\\ldots{}')
+  .replace(/\u00a0/g, '~')
+  .replace(/[\u2009\u202f]/g, '\\,');
 const inlineLatex = (markdown) => {
   const escaped = escapeLatex(markdown);
   return escaped.replace(/\*\*(.+?)\*\*/g, '\\textbf{$1}').replace(/(?<!\*)\*([^*]+)\*(?!\*)/g, '\\textit{$1}');

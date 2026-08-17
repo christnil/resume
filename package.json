@@ -18,6 +18,7 @@
   "scripts": {
     "generatepdf": "node create-tex.mjs --lang=en && mkdir -p dist && if command -v tectonic >/dev/null; then tectonic --outdir dist christoffer-nilsson-en.tex; else pdflatex -output-directory dist christoffer-nilsson-en.tex; fi",
     "generatepdf:sv": "node create-tex.mjs --lang=sv && mkdir -p dist && if command -v tectonic >/dev/null; then tectonic --outdir dist christoffer-nilsson-sv.tex; else pdflatex -output-directory dist christoffer-nilsson-sv.tex; fi",
+    "audit:unicode": "node scripts/audit-content-unicode.mjs",
     "predeploy": "npm run build && npm run generatepdf && npm run generatepdf:sv",
     "deploy": "gh-pages -d dist",
     "start": "vite",
